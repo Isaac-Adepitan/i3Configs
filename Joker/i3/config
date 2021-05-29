@@ -122,15 +122,15 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "Terminal "
-set $ws2 "Google Chrome "
+set $ws2 "Browser "
 set $ws3 "Code "
 set $ws4 "Slack "
 set $ws5 "Files "
-set $ws6 "Music "
+set $ws6 "Spotify "
 set $ws7 "General "
 set $ws8 "Vlc Media Player  "
-set $ws9 "9"
-set $ws10 "10"
+set $ws9 "Space 01"
+set $ws10 "Space 02"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -222,17 +222,23 @@ bar {
 }
 
 #My Key Binds
-bindsym $mod+shift+x exec i3lock --color "base02"
-bindsym $mod+d exec rofi -show run -config /home/isaac/.config/rofi/config
+bindsym $mod+shift+x exec betterlockscreen -l dim
+bindsym $mod+d exec rofi -show run -config /$USER/.config/rofi/config
+bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
+
+# Moving workspaces between screens 
+bindsym $mod+p move workspace to output right
 
 
 #Default Launches
+exec --no-startup-id nm-applet
 exec_always feh --bg-scale /home/isaac/Pictures/Wallpapers/wallpaper-6.jpg
 exec_always picom
 
 #Forced Windows
 assign [class="Terminator"] $ws1
-assign [class="Google-chrome"] $ws2
+assign [class="Google Chrome"] $ws2
 assign [class="Code"] $ws3
 assign [class="Slack"] $ws4
 assign [class="dolphin"] $ws5
