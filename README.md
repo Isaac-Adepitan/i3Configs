@@ -2,7 +2,7 @@
 Here's a collection of all my i3 configurations. Enjoy. 
 
 
-# [Joker](https://github.com/Isaac-Adepitan/i3-configs/tree/master/joker)
+# [Joker](https://github.com/Isaac-Adepitan/i3-configs/tree/master/Joker)
 
 Joker is my first major config, Enjoy
 
