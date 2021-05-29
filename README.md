@@ -7,4 +7,4 @@ Here's a collection of all my i3 configurations. Enjoy.
 Joker is my first major config, Enjoy
  
 
-<img src="https://res.cloudinary.com/dkshl8nj6/image/upload/v1622289785/i3%20Shots/Joker-02_ykci1s.png" Style="height:400px; width: 800px;" alt="Desktop Image">
+<img src="https://res.cloudinary.com/dkshl8nj6/image/upload/v1622297126/i3%20Shots/Folder_1_l2vozv.png" alt="Desktop Image">

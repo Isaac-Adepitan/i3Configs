@@ -1,6 +1,8 @@
 # Joker README
 Follow steps to achieve the joker config. Note i use manjaro so substitute pacman for your distros package manager. 
 
+<img src="https://res.cloudinary.com/dkshl8nj6/image/upload/v1622297126/i3%20Shots/Folder_1_l2vozv.png"  alt="Desktop Image">
+
 <img src="https://res.cloudinary.com/dkshl8nj6/image/upload/v1622289784/i3%20Shots/Joker-01_xppi1r.png" Style="height:400px; width: 800px;" alt="Desktop Image">
 
 
