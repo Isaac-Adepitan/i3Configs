@@ -7,6 +7,6 @@ Follow steps to achieve the joker config.
 
 Arch
 
-''' bash
+``` bash
 pacman -S i3 i3blocks
-'''    
+```    
