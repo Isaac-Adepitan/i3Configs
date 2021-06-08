@@ -37,10 +37,6 @@ font pango:BeVietnam 8
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -52,6 +48,14 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
+
+# Spotify Media Key Binds (Pause, Play, Previous & Next)
+
+bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -60,6 +64,7 @@ bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
 
 # change focus
 bindsym $mod+j focus left
@@ -121,8 +126,8 @@ set $ws5 "Files "
 set $ws6 "Spotify "
 set $ws7 "General "
 set $ws8 "Vlc Media Player  "
-set $ws9 "Space 01"
-set $ws10 "Space 02"
+set $ws9 "Free Space 1"
+set $ws10 "Free Space 2"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -212,6 +217,13 @@ bar {
               urgent_workspace   $base01 $base01    $base08
     }
 }
+
+# set desktop background with custom effect
+exec --no-startup-id betterlockscreen -w dim
+
+# Alternative (set last used background)
+exec --no-startup-id source ~/.fehbg
+
 
 #My Key Binds
 bindsym $mod+shift+x exec betterlockscreen -l dim
